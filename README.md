@@ -54,7 +54,8 @@ What upstream shim tag is this starting from:
 -------------------------------------------------------------------------------
 URL for a repo that contains the exact code which was built to get this binary:
 -------------------------------------------------------------------------------
-[Debian Buster http://ftp.debian.org/debian/pool/main/s/shim/]
+[Debian Buster http://deb.debian.org/debian
+http://ftp.debian.org/debian/pool/main/s/shim/]
 
 -------------------------------------------------------------------------------
 What patches are being applied and why:
