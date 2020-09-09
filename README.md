@@ -20,48 +20,48 @@ Here's the template:
 -------------------------------------------------------------------------------
 What organization or people are asking to have this signed:
 -------------------------------------------------------------------------------
-[your text here]
+[TmaxOS]
 
 -------------------------------------------------------------------------------
 What product or service is this for:
 -------------------------------------------------------------------------------
-[your text here]
+[TmaxOS]
 
 -------------------------------------------------------------------------------
 What's the justification that this really does need to be signed for the whole world to be able to boot it:
 -------------------------------------------------------------------------------
-[your text here]
+[We hope TmaxOS will support Secure Boot]
 
 -------------------------------------------------------------------------------
 Who is the primary contact for security updates, etc.
 -------------------------------------------------------------------------------
-- Name:
-- Position:
-- Email address:
+- Name: YeongSeok Lee
+- Position: TmaxOS Researcher
+- Email address: yeongseok_lee@tmax.co.kr
 - PGP key, signed by the other security contacts, and preferably also with signatures that are reasonably well known in the linux community:
 
 -------------------------------------------------------------------------------
 Who is the secondary contact for security updates, etc.
 -------------------------------------------------------------------------------
-- Name:
-- Position:
-- Email address:
+- Name: Taewoo Leem
+- Position: TmaxOS Researcher
+- Email address: taewoo_leem@tmax.co.kr
 - PGP key, signed by the other security contacts, and preferably also with signatures that are reasonably well known in the linux community:
 
 -------------------------------------------------------------------------------
 What upstream shim tag is this starting from:
 -------------------------------------------------------------------------------
-[our url here]
+[Tag 15]
 
 -------------------------------------------------------------------------------
 URL for a repo that contains the exact code which was built to get this binary:
 -------------------------------------------------------------------------------
-[your url here]
+[Debian Buster http://ftp.debian.org/debian/pool/main/s/shim/]
 
 -------------------------------------------------------------------------------
 What patches are being applied and why:
 -------------------------------------------------------------------------------
-[your text here]
+[No patches have been applied]
 
 -------------------------------------------------------------------------------
 If bootloader, shim loading is, grub2: is CVE-2020-10713 fixed ?
@@ -100,14 +100,14 @@ available in public with anonymous access for verification
 What OS and toolchain must we use to reproduce this build?  Include where to find it, etc.  We're going to try to reproduce your build as close as possible to verify that it's really a build of the source tree you tell us it is, so these need to be fairly thorough. At the very least include the specific versions of gcc, binutils, and gnu-efi which were used, and where to find those binaries.
 If possible, provide a Dockerfile that rebuilds the shim.
 -------------------------------------------------------------------------------
-[your text here]
+[gnu-efi: 3.0.9-1, gcc-7: 7.4.0-6, libelf-dev: 0.176-1.1, sbsigntool: 0.9.2-2, openssl: 1.1.1d-0+deb10u3, pesign: 0.112-5]
 
 -------------------------------------------------------------------------------
 Which files in this repo are the logs for your build?   This should include logs for creating the buildroots, applying patches, doing the build, creating the archives, etc.
 -------------------------------------------------------------------------------
-[your text here]
+[build-shimx64.log]
 
 -------------------------------------------------------------------------------
 Add any additional information you think we may need to validate this shim
 -------------------------------------------------------------------------------
-[your text here]
+[None]
