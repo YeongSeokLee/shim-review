@@ -1,4 +1,4 @@
-FROM tmaxos:lastest
+FROM bdg97119/tmaxos:lastest
 
 # install packages
 RUN sed -i 's/#//g' /etc/apt/sources.list
