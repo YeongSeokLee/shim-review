@@ -24,14 +24,15 @@ WORKDIR /shim-15+1533136590.3beb971
 RUN debuild -us -uc
 WORKDIR /
 RUN hexdump -Cv /shim-15+1533136590.3beb971/shimx64.efi > build
+RUN sha256sum /shim-15+1533136590.3beb971/shimx64.efi
 
 # 3. download shim from shim-review git repo and make hexdump
 RUN git clone https://github.com/YeongSeokLee/shim-review.git shim-review
 RUN hexdump -Cv /shim-review/shimx64.efi > review
 
 # 4. compare 3 hexdumps
-RUN diff -u orig build > orig_build_diff.log
-RUN diff -u build review > build_review_diff.log
+RUN diff -u orig build > orig_build_diff.log; exit 0
+RUN diff -u build review > build_review_diff.log; exit 0
 
 
 ##############
@@ -44,7 +45,7 @@ RUN apt source grub2=2.02+dfsg1-20+deb10u2+tos5u1
 RUN mv grub2-2.02+dfsg1/ grub2-2.02+dfsg1_tmaxos
 
 # 2. compare
-RUN diff -r grub2-2.02+dfsg1_orig grub2-2.02+dfsg1_tmaxos
+RUN diff -r grub2-2.02+dfsg1_orig grub2-2.02+dfsg1_tmaxos; exit 0
 
 
 ################
@@ -52,9 +53,9 @@ RUN diff -r grub2-2.02+dfsg1_orig grub2-2.02+dfsg1_tmaxos
 ################
 # 1. download original kernel and repackaged kernel
 RUN apt source linux=4.19.146-1
-RUN mv linux_4.19.146 linux_4.19.146_orig
+RUN mv linux-4.19.146 linux-4.19.146_orig
 RUN apt source linux=4.19.146-1+tos5u1
-RUN mv linux_4.19.146 linux_4.19.146_tmaxos
+RUN mv linux-4.19.146 linux-4.19.146_tmaxos
 
 # 2. compare
-RUN diff -r linux_4.19.146_orig linux_4.19.146_tmaxos
+RUN diff -r linux-4.19.146_orig linux-4.19.146_tmaxos
