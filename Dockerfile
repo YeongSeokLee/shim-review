@@ -2,6 +2,7 @@ FROM bdg97119/tmaxos:lastest
 
 # install packages
 RUN sed -i 's/#//g' /etc/apt/sources.list
+RUN echo 'deb-src http://tos-repo.tmaxos.com/tmax tmax-oe main contrib non-free tos' >> /etc/apt/sources.list
 RUN apt update
 RUN DEBIAN_FRONTEND=noninteractive apt install -y devscripts git-buildpackage software-properties-common git gnu-efi sbsigntool libelf-dev gcc-7 pesign
 
